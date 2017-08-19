@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TR Vernal Paving | Services</title>
+  <!-- meta inf -->
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link href="styles/main.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div id="root">
+    <nav class="white nav-extended" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="asphalt.html">Asphalt</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="asphalt.html">Asphalt</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=15LHP5QPTs3Vqz6VXwduHvbaURqY" width="100%" height="275"></iframe>
+    
+    <main>
+      <div class="container">
+        <h3>Drop us a line</h3>
+        <div class="row">
+          <form class="col s12 lg10 xl8" id="contact">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" name="first name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" name="last name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="email" name="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field col s12">
+                <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                <label for="message">Message</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="answer" name="answer" type="text" class="validate">
+                <label for="answer" id="question">Generating...</label>
+              </div>
+            </div>
+            <button class="btn submit-btn waves-effect waves-light" id="submit" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+          <br>
+          <ul class="col s12 lg2 xl4 collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header active"><i class="material-icons">info</i>FAQ</div>
+              <div class="collapsible-body">
+                <strong>What is what?</strong>
+                <p>
+                  This is an answer to FAQ item #1. It's important to have accessable
+                  simple answers to cut down on contact form submissions, as it could
+                  start to charge a good chunck of change to send out a bunch of emails.
+                </p>
+                <strong>What is what?</strong>
+                <p>
+                  This is an answer to FAQ item #2. It's important to have accessable
+                  simple answers to cut down on contact form submissions, as it could
+                  start to charge a good chunck of change to send out a bunch of emails.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">help</i>Need Help?</div>
+              <div class="collapsible-body">
+                
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">people</i>Our Contact Info</div>
+              <div class="collapsible-body">
+                  <div class="text-w-glyph"><i class="material-icons">local_phone</i>(919) 802-8647<div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h4>Thanks for reaching out</h4>
+          <p>
+            You're message has been submitted. We'll be in touch! Redirecting to the
+            home page in <span id="seconds">5</span> seconds...
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2017 TR Vernal Paving
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script src="scripts/contact.js"></script>
+  </body>
+</html>

@@ -8,6 +8,7 @@ html, body {
 }
 
 
+
 p {
   line-height: 2rem;
 }
@@ -60,4 +61,33 @@ footer.page-footer {
 .card-img {
   max-height: 250px;
   object-fit: cover;
+}
+
+.submit-btn {
+  width: 90%;
+  margin: auto 5%;
+  height: 50px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root>main {
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #577483 !important;
+}
+
+footer>div {
+  background-color: #4D6A79 !important;
+}
+
+.text-w-glyph {
+  display: inline-flex;
+  vertical-align: middle;
 }
