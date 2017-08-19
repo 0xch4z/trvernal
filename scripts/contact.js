@@ -9,9 +9,9 @@
       var addend = Math.floor(Math.random() * 10);
       var augend = Math.floor(Math.random() * 10);
       answer = addend + augend;
-      question = 'Answer: ' + addend + ' + ' + augend + ' =  *';
-      document.getElementById('question').innerText = question;
-      document.getElementById('answer').innerText = '';
+      question = 'What is ' + addend + ' + ' + augend + ' =  * ?';
+      $('#question').text(question);
+      $('#answer').val('').blur();
     }
 
     // page init
@@ -20,8 +20,7 @@
     $('#modal').modal();
     generateCaptcha();
 
-    // globals
-    var form = document.getElementById('contact');
+    // global
     var emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     // handle count down
@@ -42,36 +41,44 @@
     }
 
     // handle submission
-    contact.addEventListener('submit', function(e) {
-      e.preventDefault();
+    $('#submit').click(function() {
 
-      console.dir(e);
+      // get field values
+      var firstName = $('#first_name').val();
+      var lastName = $('#last_name').val();
+      var email = $('#email').val();
+      var message = $('#message').val();
+      var $answer = $('#answer').val();
 
-      var firstName = document.getElementById('first_name').value.trim();
-      var lastName = document.getElementById('last_name').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var message = document.getElementById('message').value;
-      var $answer = document.getElementById('answer').value.trim();
+      console.log('firstname', firstName);
+      console.log('lastname', lastName);
+      console.log('email', email);
+      console.log('message', message);
 
+      // check for empty fields
       if (!firstName || !lastName || !email || !message) {
+        console.log('empty fields');
         Materialize.toast('Please fill out all form fields!', 5000);
         generateCaptcha();
+        return false;
       } else if (!emailRegex.test(email)) {
+        console.log('invalid email');
         Materialize.toast('Invalid email address', 5000);
         generateCaptcha();
-      } else if (answer != $answer) {
-        Materialize.toast('You\'ve failed to answer the CAPTCHA correctly!');
+      } else if (answer != $answer.trim()) {
+        console.log('invalid captcha');
+        Materialize.toast('You\'ve failed to answer the CAPTCHA correctly!', 5000);
         generateCaptcha();
       } else {
         // submit via ajax
         console.log('form is valid');
-
         // notify user
         $('#modal').modal('open');
-
         // redirect
         initRedirect();
       }
+
+      return false
     });
   });
 })(jQuery);
