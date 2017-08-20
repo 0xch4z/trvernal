@@ -1,0 +1,83 @@
+extends layout
+
+block head
+  title T.R. Vernal Paving | Contact
+
+block content
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=15LHP5QPTs3Vqz6VXwduHvbaURqY" width="100%" height="275"></iframe>
+  .container
+    h3 Drop us a line
+    .row
+      #contact.col.s12.lg10.xl8
+        .row
+          .input-field.col.s6
+            input#first_name.validate(name='first name', type='text')
+            label(for='first_name') First Name
+          .input-field.col.s6
+            input#last_name.validate(name='last name', type='text')
+            label(for='last_name') Last Name
+          .input-field.col.s12
+            input#email.validate(name='email', type='email')
+            label(for='email') Email
+          .input-field.col.s12
+            textarea#message.materialize-textarea(name='message')
+            label(for='message') Message
+          .input-field.col.s12
+            input#answer.validate(name='answer', type='text')
+            label#question(for='answer') Generating...
+        button#submit.btn.submit-btn.waves-effect.waves-light
+          | Send
+          i.material-icons.right send
+      br.col.s12.md0.lg0.xl0
+      ul.col.s12.lg2.xl4.collapsible(data-collapsible='accordion')
+        li
+          .collapsible-header
+            i.material-icons people
+            | Our Contact Info
+          .collapsible-body.blocked
+            .text-w-glyph
+              i.material-icons local_phone
+              a(href='tel:9197826515')  (919) 782-6515
+            .text-w-glyph
+              i.material-icons print
+              a(href='fax:9197414631')  (919) 741-4631
+            .text-w-glyph
+              i.material-icons email
+              a(href='mailto:trv@trvernalpaving.com') trv@trvernalpaving.com
+            .text-w-glyph
+              i.material-icons room
+              a(href='https://www.google.com/maps/place/6221+Mt+Herman+Rd,+Raleigh,+NC+27617/data=!4m2!3m1!1s0x89acfa0c05c6ea21:0x95b2080e9dabaad4?sa=X&ved=0ahUKEwj0-rOsuuTVAhWGKiYKHZ0qCHYQ8gEIJTAA')  6221 Mt Herman Rd, Raleigh, NC 27617
+        li
+          .collapsible-header.active
+            i.material-icons info
+            | FAQ
+          .collapsible-body
+            strong What is what?
+            p
+              | This is an answer to FAQ item #1. It's important to have accessable
+              | simple answers to cut down on contact form submissions, as it could
+              | start to charge a good chunck of change to send out a bunch of emails.
+            strong What is what?
+            p
+              | This is an answer to FAQ item #2. It's important to have accessable
+              | simple answers to cut down on contact form submissions, as it could
+              | start to charge a good chunck of change to send out a bunch of emails.
+        li
+          .collapsible-header
+            i.material-icons help
+            | Need Help?
+          .collapsible-body
+  #modal.modal
+    .modal-content
+      h4 Thanks for reaching out
+      p
+        | You're message has been submitted. We'll be in touch! Redirecting to the
+        | home page in 
+        span#seconds 5
+        |  seconds...
+    .modal-footer
+      a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Okay
+
+
+block scripts
+  script(src='scripts/contact.js')

@@ -30,7 +30,7 @@
         $('#seconds').text(seconds);
       } else {
         clearInterval(timer);
-        document.location = 'index.html';
+        document.location = '/';
       }
     }
 
