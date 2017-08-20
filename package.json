@@ -2,11 +2,13 @@
   "name": "trvernal-express",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm run build",
     "build": "babel server.js -o app",
     "dev": "nodemon --exec \"babel-node server\"",
     "start": "node app"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "compression": "^1.7.0",
     "express": "^4.15.4",
     "mailgun-js": "^0.13.1",
