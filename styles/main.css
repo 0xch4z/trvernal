@@ -7,8 +7,6 @@ html, body {
   margin: 0;
 }
 
-
-
 p {
   line-height: 2rem;
 }
@@ -22,6 +20,7 @@ p {
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
+  background: none !important;
 }
   .parallax-container .section {
     width: 100%;
@@ -48,6 +47,12 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
+  color: #4db6ac !important;
+}
+
+.icon-block .material-icons:hover {
+  color: #4D6979 !important;
+  cursor: pointer;
 }
 
 footer.page-footer {
@@ -79,15 +84,70 @@ footer.page-footer {
   flex-grow: 1;
 }
 
+
+.tab>a {
+  color: rgba(87, 116, 131, 0.5) !important;
+}
+
+.tab>a.active, .tab>a:hover {
+  color: #4D6979 !important;
+}
+
 footer {
   background-color: #577483 !important;
 }
 
-footer>div {
-  background-color: #4D6A79 !important;
+footer>div, li.indicator {
+  background-color: #4D6979 !important;
 }
 
 .text-w-glyph {
   display: inline-flex;
   vertical-align: middle;
+  margin: 5px 0;
+}
+
+.blocked {
+  display: flex;
+  flex-direction: column;
+}
+
+#logo-img {
+  height: 50px; 
+  transition: all 0.3s ease-in;
+}
+
+#logo-img:hover {
+  fill: #4DB6AC;
+  transform: scale(1.1);
+}
+
+#logo-container {
+  display: flex;
+  height: 100%;
+}
+
+#test {
+  transition: transform 1s ease-in;
+}
+
+#test:hover {
+  animation: spin 4000ms infinite linear;
+  -webkit-animation: spin 4000ms infinite linear;
+  -moz-animation: spin 4000ms infinite linear;
+  cursor: pointer;
+  color: #fff ;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
