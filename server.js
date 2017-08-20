@@ -1,9 +1,17 @@
 import express from 'express';
+import logger from 'morgan';
+import compression from 'compression';
+
+const dev = process.env.NODE_ENV !== 'production';
+const morganConfig = dev ? 'dev' : 'combined';
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.set('view engine', 'pug');
 
 app.use(express.static(`${__dirname}/static`));
+app.use(compression());
+app.use(logger(morganConfig));
 
 app.get('/', (req, res) => {
   res.render('home');
@@ -31,7 +39,6 @@ app.get('/send-message', (req, res) => {
   });
 });
 
-
-app.listen(3000, () => {
-  console.log('running on port %d', 3000);
+app.listen(PORT, () => {
+  console.log('running on port %d', PORT);
 });
